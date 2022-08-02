@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js')
+    body
+        .row.mt-5
+            .col-3 
+            .col-6
+                form(action="parser" method="POST" enctype="multipart/form-data")
+                    .row
+                        .col-12
+                            a.d-block.mb-2(href="download") 範例檔
+                        .col-12
+                            .input-group.mb-3 
+                                label.input-group-text(for="log")
+                                input.form-control#log(type="file" accept=".log" name="log")
+                        .col-12
+                            .text-success.mb-2.d-block 選擇輸出欄位
+                        each val, i in fields
+                            .form-check.col-3
+                                input.form-check-input(type="checkbox" name="fields[]" value=val id=val)
+                                label.form-check-label(for=val) #{val}
+                        hr.mt-2
+                        .col-9
+                        .col-3
+                            button.btn.btn-primary#submit(type="submit") 送出
+            .col-3
