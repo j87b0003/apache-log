@@ -17,7 +17,6 @@
   "homepage": "https://github.com/j87b0003/apache-log#readme",
   "description": "",
   "dependencies": {
-    "apache-log2": "^1.1.0",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
