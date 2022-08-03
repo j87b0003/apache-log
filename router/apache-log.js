@@ -56,6 +56,7 @@ router.post('/parser',
     middlewares.checkFile,
     middlewares.writeLineToFile,
     async (req, resp) => {
+        console.log('\033[0;31mExport to CSV\033[0m')
         resp.setHeader('Content-Type', 'text/csv')
         resp.setHeader('Content-Disposition', 'attachment; filename=log.csv')
         writeToBuffer(req.data).then(d => {
